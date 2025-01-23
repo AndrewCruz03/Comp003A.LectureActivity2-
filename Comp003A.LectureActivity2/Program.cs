@@ -11,13 +11,18 @@ namespace Comp003A.LectureActivity2
         {
             // First we Declare our variables to get them to work
             String username;
+            String username2;
             int userage;
             double productprice;
+            double productprice2;
             bool isStudent;
 
             // This initalizes the variables
-            Console.WriteLine("Enter Your name:");
+            Console.WriteLine("Enter Your first name:");
             username = Console.ReadLine();
+
+            Console.WriteLine("Enter Your Last name");
+            username2 = Console.ReadLine();
 
             Console.Write("Enter your age:");
             userage=int.Parse(Console.ReadLine());
@@ -25,20 +30,26 @@ namespace Comp003A.LectureActivity2
             Console.WriteLine("Enter the price of a product:");
             productprice = double.Parse(Console.ReadLine());
 
+            Console.WriteLine("Enter the price of a product:");
+            productprice2 = double.Parse(Console.ReadLine());
+
             Console.Write("Are you a student? (true/false):  ");
             isStudent = bool.Parse(Console.ReadLine());
 
-            // does calculations, checks age in 5years and checks if age is over 18
+            // does calculations, checks age in 5years and checks if age is over 60
             int futureAge = userage  + 5;
-            bool isAdult = userage >= 18;
+            bool isAdult = userage >= 60;
+            double StudentDiscount = (productprice * .90);
+            double ElderDiscount = (productprice2 * .80);
             bool isAdultStudent = isStudent && isAdult;
 
             // Displays data after inputs
-            Console.WriteLine($"\nHello, {username}!");
-            Console.WriteLine($"You are currently {userage} years old. In 5 years you will be {futureAge}.");
-            Console.WriteLine($"Are you 18 or older? {isAdult}");
-            Console.WriteLine($"Are you both a student and 18 or older? {isAdultStudent}");
-          
+            Console.WriteLine($"\nHello, {username} {username2}!");
+            Console.WriteLine($"You are currently {userage} years old.\n In 5 years you will be {futureAge}.");
+            Console.WriteLine($"The Student discount is {StudentDiscount}");
+            Console.WriteLine($"The ElderDiscount is {ElderDiscount}");
+
+
         }
     }
 }
